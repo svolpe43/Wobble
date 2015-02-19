@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.bme.shawn.wobble.RecordDisplayActivity" >
+
+    <item android:id="@+id/recordings"
+        android:title="@string/recordings"
+        android:showAsAction="ifRoom|withText"/>
+
+    <item android:id="@+id/wobble"
+        android:title="@string/wobble"
+        android:showAsAction="ifRoom|withText"/>
+</menu>

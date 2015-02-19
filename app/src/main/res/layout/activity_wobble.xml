@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- Copyright (C) 2007 The Android Open Source Project
+
+         Licensed under the Apache License, Version 2.0 (the "License");
+         you may not use this file except in compliance with the License.
+         You may obtain a copy of the License at
+
+              http://www.apache.org/licenses/LICENSE-2.0
+
+         Unless required by applicable law or agreed to in writing, software
+         distributed under the License is distributed on an "AS IS" BASIS,
+         WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+         See the License for the specific language governing permissions and
+         limitations under the License.
+    -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<com.bme.shawn.wobble.WobbleView
+    android:id="@+id/wobble"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_horizontal|bottom">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/linearLayout4"
+            android:layout_alignParentBottom="true">
+
+            <com.bme.shawn.wobble.TypefacedTextView
+                android:id="@+id/bluetooth_text"
+                android:text="@string/bluetooth_status"
+                android:visibility="visible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp" />
+
+            <com.bme.shawn.wobble.TypefacedTextView
+                android:id="@+id/accel_text"
+                android:text="@string/accel"
+                android:visibility="visible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/linearLayout4"
+                android:layout_alignTop="@+id/linearLayout4"
+                android:layout_toRightOf="@+id/linearLayout4"
+                android:layout_marginLeft="10dp" />
+        </LinearLayout>
+
+
+        <!-- Settings-->
+        <LinearLayout
+            android:id="@+id/settings_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+            <!-- Seek Bars -->
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/linearLayout">
+                <EditText
+                    android:id="@+id/record_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/record_name"
+                    android:inputType="text"
+                    android:layout_weight="1" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start"
+                    android:id="@+id/start"
+                    android:onClick="startRecording"
+                    android:background="@drawable/cool_button"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stop"
+                    android:id="@+id/stop"
+                    android:onClick="stopRecording"
+                    android:background="@drawable/cool_button"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/settings"
+                android:layout_below="@+id/linearLayout"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="#CC31284F">
+
+                <com.bme.shawn.wobble.TypefacedTextView
+                    android:id="@+id/threshold_text"
+                    android:text="@string/threshold"
+                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sizeSeekBar"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginStart="60dp"/>
+                <SeekBar
+                    android:id="@+id/thresholdSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="150"
+                    android:progress="100"
+                    android:layout_below="@+id/stability_text"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                </SeekBar>
+
+                <com.bme.shawn.wobble.TypefacedTextView
+                    android:id="@+id/refractory_text"
+                    android:text="@string/refractory"
+                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sizeSeekBar"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginStart="60dp"/>
+                <SeekBar
+                    android:id="@+id/refractorySeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="500"
+                    android:progress="250"
+                    android:layout_below="@+id/stability_text"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                </SeekBar>
+                <com.bme.shawn.wobble.TypefacedTextView
+                    android:id="@+id/delta_text"
+                    android:text="@string/delta"
+                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginStart="60dp"/>
+                <SeekBar
+                    android:id="@+id/deltaSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="500"
+                    android:progress="250"
+                    android:layout_below="@+id/stability_text"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                </SeekBar>
+
+                <com.bme.shawn.wobble.TypefacedTextView
+                    android:id="@+id/stability_text"
+                    android:text="@string/stability"
+                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sizeSeekBar"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginStart="60dp"/>
+                <SeekBar
+                    android:id="@+id/stabilitySeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:progress="20"
+                    android:max="100"
+                    android:layout_below="@+id/stability_text"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                </SeekBar>
+
+                <com.bme.shawn.wobble.TypefacedTextView
+                    android:id="@+id/scalar_text"
+                    android:text="@string/scalar"
+                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="10dp"
+                    />
+                <SeekBar
+                    android:id="@+id/sizeSeekBar"
+                    android:progress="50"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="400"
+                    android:layout_below="@+id/linearLayout2"
+                    android:layout_centerHorizontal="true">
+                </SeekBar>
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</FrameLayout>

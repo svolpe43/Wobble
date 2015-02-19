@@ -1,0 +1,92 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/main_bg">
+    <com.bme.shawn.wobble.TypefacedTextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_marginLeft="20dp"
+        android:textSize="35sp"
+        android:textIsSelectable="false" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.bme.shawn.wobble.TypefacedTextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            android:textIsSelectable="false" />
+        <com.bme.shawn.wobble.TypefacedTextView
+            android:id="@+id/duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duration"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/time"
+            android:layout_toEndOf="@+id/time"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp" />
+        </LinearLayout>
+
+
+    <!--<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.bme.shawn.wobble.TypefacedTextView
+            android:id="@+id/threshold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Threshold"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp" />
+        <com.bme.shawn.wobble.TypefacedTextView
+            android:id="@+id/refractory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Refractory"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            android:textIsSelectable="false" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.bme.shawn.wobble.TypefacedTextView
+            android:id="@+id/delta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delta"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            android:textIsSelectable="false" />
+        <com.bme.shawn.wobble.TypefacedTextView
+            android:id="@+id/stability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stability"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp" />
+        <com.bme.shawn.wobble.TypefacedTextView
+            android:id="@+id/scalar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scalar"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp" />
+
+    </LinearLayout>-->
+</LinearLayout>

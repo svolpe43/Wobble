@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.bme.shawn.wobble.WobbleActivity" >
+
+    <!--Extra Menu-->
+    <item android:id="@+id/sizeLock"
+        android:title="@string/sizeLock"
+        android:showAsAction="never" />
+    <item android:id="@+id/openGL"
+        android:title="@string/openGL"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+    <item android:id="@+id/discoverable"
+        android:title="@string/discoverable"
+        android:showAsAction="never" />
+    <item android:id="@+id/restart"
+        android:title="@string/restart_game"
+        android:showAsAction="never" />
+
+    <item android:id="@+id/connect_scan"
+        android:title="@string/connect"
+        android:showAsAction="ifRoom|withText" />
+    <item android:id="@+id/recordings"
+        android:title="@string/recordings"
+        android:showAsAction="ifRoom|withText" />
+    <item android:id="@+id/bluetooth_toggle"
+        android:title="@string/bluetooth_toggle"
+        android:showAsAction="ifRoom|withText" />
+
+
+</menu>

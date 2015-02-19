@@ -1,0 +1,44 @@
+<resources>
+    <color name="actionbar_bg">#B20047</color>
+    <color name="main_bg">#31284F</color>
+    <!-- Base application theme. -->
+    <style name="MyAppTheme" parent="android:Theme.Holo">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/actionbar_bg</item>
+        <item name="android:colorBackground">@color/main_bg</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@color/actionbar_bg</item>
+    </style>
+
+    <style name="textview">
+        <item name="android:textColor">#fff</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="buttons">
+        <item name="android:textColor">#fff</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="button_text" >
+        <item name="android:layout_width" >fill_parent</item>
+        <item name="android:layout_height" >wrap_content</item>
+        <item name="android:textColor" >#ffffff</item>
+        <item name="android:gravity" >center</item>
+        <item name="android:layout_margin" >3dp</item>
+        <item name="android:textSize" >30dp</item>
+        <item name="android:textStyle" >bold</item>
+        <item name="android:shadowColor" >#000000</item>
+        <item name="android:shadowDx" >5</item>
+        <item name="android:shadowDy" >5</item>
+        <item name="android:shadowRadius" >2</item>
+    </style>
+
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Wobble</string>
+
+    <!-- OpenGL Activity -->
+    <string name="hello">Welcome to Wobble!</string>
+    <string name="buttonx">X-axis</string>
+    <string name="buttony">Y-axis</string>
+    <string name="buttonz">Z-axis</string>
+
+    <!-- Extra Menu Items -->
+    <string name="settings">Settings</string>
+    <string name="results">Results</string>
+    <string name="openGL">OpenGL</string>
+    <string name="wobble">Wobble</string>
+    <string name="accel">Accelerometer</string>
+    <string name="game_msg"></string>
+    <string name="weight">Wobble</string>
+    <string name="restart_game">Restart</string>
+    <string name="size">Board</string>
+    <string name="sizeLock">Lock</string>
+    <string name="recordings">Recordings</string>
+    <string name="reload">Reload</string>
+    <string name="record_name">Record Name</string>
+    <string name="date">Date</string>
+    <string name="duration">Duration</string>
+
+    <string name="threshold">Threshold 100</string>
+    <string name="stability">Stability 20</string>
+    <string name="refractory">Refractory 250</string>
+    <string name="delta">Delta 250</string>
+    <string name="scalar">Scalar 50</string>
+
+    <!-- Bluetooth Status Messages -->
+    <string name="connect">Connect</string>
+    <string name="discoverable">Discoverable</string>
+    <string name="bluetooth_status">Not connected...</string>
+    <string name="bluetooth_toggle">Toggle Bluetooth</string>
+    <string name="instructions">Connect to a device or toggle bluetooth off.</string>
+
+    <!-- Bluetooth Toasts -->
+    <string name="not_connected">You are not connected to a device</string>
+    <string name="bt_not_enabled_leaving">Bluetooth was not enabled. Using internal sensors.</string>
+    <string name="title_connecting">connecting...</string>
+    <string name="title_connected_to">connected to </string>
+    <string name="title_not_connected">not connected</string>
+
+    <!-- BlueTooth Device Selection Activity -->
+    <string name="scanning">scanning for devices...</string>
+    <string name="select_device">select a device to connect</string>
+    <string name="none_paired">No devices have been paired</string>
+    <string name="none_found">No devices found</string>
+    <string name="title_paired_devices">Paired Devices</string>
+    <string name="title_other_devices">Other Available Devices</string>
+    <string name="button_scan">Scan for devices</string>
+    <string name="title_activity_recordings">Recordings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_record_display">Record Display</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
