@@ -88,9 +88,7 @@ public class RecordingsActivity extends ListActivity {
         // try to download the file and init UI
         try{
             File recordingFile = new File(filepath, RECORDINGS_FILE_NAME);
-            if (!recordingFile.canWrite()) {
-                Log.e(TAG, "Recordings file not writtable.");
-            } else {
+            if (recordingFile.canRead()) {
 
                 // download the contents of the file
                 records = downloadRecordings(new BufferedReader(new FileReader(recordingFile)));
@@ -99,6 +97,15 @@ public class RecordingsActivity extends ListActivity {
                 RecordingsAdapter recordingAdapter = new RecordingsAdapter(this, records);
                 setListAdapter(recordingAdapter);
                 getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+
+                // download the contents of the file
+                records = downloadRecordings(new BufferedReader(new FileReader(recordingFile)));
+
+                // create custom list view adapter and apply it
+                RecordingsAdapter recordingaAdapter = new RecordingsAdapter(this, records);
+                setListAdapter(recordingaAdapter);
+                getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+
             }
         }catch(IOException e){
             Log.e(TAG, String.valueOf(e));

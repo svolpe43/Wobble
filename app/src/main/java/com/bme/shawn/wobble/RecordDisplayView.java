@@ -11,7 +11,7 @@ import android.view.View;
 
 import com.example.android.opengl.R;
 
-class RecordDisplayView extends View {
+public class RecordDisplayView extends View {
 
     private float XCenter;
     private float YCenter;

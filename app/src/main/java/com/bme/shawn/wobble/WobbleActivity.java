@@ -112,7 +112,9 @@ public class WobbleActivity extends Activity implements View.OnClickListener {
         wobbleView.setOnClickListener(WobbleActivity.this);
         wobbleView.setOnTouchListener(gestureListener);
 
-        // Get local Bluetooth adapter
+        // don't use BT because were putting phone into the board
+        wobbleView.setDataSource(WobbleThread.INTERNAL_SENSORS);
+        /*/ Get local Bluetooth adapter
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         // If the adapter is null, then Bluetooth is not supported
@@ -138,8 +140,7 @@ public class WobbleActivity extends Activity implements View.OnClickListener {
             // all is well with bluetooth - use bluetooth
             Log.d(TAG, "setting bluetooth to bluetooth");
             wobbleView.setDataSource(WobbleThread.BLUETOOTH);
-            //wobbleThread.setDataSource(WobbleThread.BLUETOOTH);
-        }
+        }*/
 
         // get the seek bar texts
         mStabilityView = (TextView) findViewById(R.id.stability_text);

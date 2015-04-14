@@ -277,15 +277,13 @@ public class WobbleThread extends Thread implements SensorEventListener{
                 }
 
                 // only get file and initiate the writer if it hasn't already been done
-                if (mRecordingWriter == null){
-                    File recordingFile = new File(filepath, RECORDINGS_FILE_NAME);
-                    if (!recordingFile.canWrite()) {
-                        if (!recordingFile.createNewFile())
-                            Log.e(TAG, "Couldn't create the Recordings file.");
-                        Log.e(TAG, "Recordings file not writtable.");
-                    }
-                    mRecordingWriter = new FileWriter(recordingFile, true);
+                File recordingFile = new File(filepath, RECORDINGS_FILE_NAME);
+                if (!recordingFile.canWrite()) {
+                    if (!recordingFile.createNewFile())
+                        Log.e(TAG, "Couldn't create the Recordings file.");
+                    Log.e(TAG, "Recordings file not writtable.");
                 }
+                mRecordingWriter = new FileWriter(recordingFile, true);
 
                 // try writing the data to the files and close the writers
                 try{
@@ -301,6 +299,7 @@ public class WobbleThread extends Thread implements SensorEventListener{
 
                     // close the writer - only close raw data because we will re use the recording writer
                     mRawDataWriter.close();
+                    mRecordingWriter.close();
 
                     // reset the buffer strings
                     mRawDataBuf.setLength(0);
@@ -643,14 +642,16 @@ public class WobbleThread extends Thread implements SensorEventListener{
                     // receiving
                     float x = buf.getFloat();
                     float y = buf.getFloat();
+                    float z = buf.getFloat();
 
                     if(mDataSource == BLUETOOTH) {
-
                         updateAccelUI(x, y, 0);
-
                     }
 
-                    //handleAccelData(x_val, y_val, z_val);
+                    Log.d(TAG, "X: " + Float.toString(x));
+                    Log.d(TAG, "Y: " + Float.toString(y));
+                    Log.d(TAG, "Z: " + Float.toString(z));
+                    //updateAccelUI(x_val, y_val, z_val);
 
                     break;
                 case MESSAGE_DEVICE_NAME:

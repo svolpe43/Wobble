@@ -1,6 +1,6 @@
 <resources>
-    <color name="actionbar_bg">#B20047</color>
-    <color name="main_bg">#31284F</color>
+    <color name="actionbar_bg">#b20047</color> <!--#b20047-->
+    <color name="main_bg">#31284f</color> <!--#31284f-->
     <!-- Base application theme. -->
     <style name="MyAppTheme" parent="android:Theme.Holo">
         <!-- Customize your theme here. -->
